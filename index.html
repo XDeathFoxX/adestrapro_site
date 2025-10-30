@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adestra Pro</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '751714854558054');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent');
+  fbq('track', 'InitiateCheckout');
+  fbq('track', 'Purchase');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=751714854558054&ev=PageView&noscript=1"
+  /></noscript>
+<!-- End Meta Pixel Code -->
+
+  <!-- Tipografia: usa fontes do sistema para performance e compatibilidade -->
+  <style>
+    /* =========================
+       VARIÁVEIS E RESET
+       ========================= */
+    :root{
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --accent: #c9753c; /* marrom/laranja do CTA */
+      --accent-2: #d69357;
+      --muted: #a39a8f;
+      --green-soft: #dff3ea;
+      --rounded: 14px;
+      --radius-small: 10px;
+      --shadow: 0 6px 20px rgba(18,16,14,0.06);
+      --font-sans: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:var(--font-sans);
+      background: linear-gradient(180deg, #fbfaf8 0%, var(--bg) 100%);
+      color: #2b2620;
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.35;
+      -webkit-text-size-adjust:100%;
+    }
+    img{display:block;max-width:100%;height:auto;border-radius:10px}
+    a{color:inherit;text-decoration:none}
+
+    /* =========================
+       LAYOUT MÓVEL (BASE)
+       ========================= */
+    .container{
+      width:100%;
+      max-width:420px; /* largura típica mobile */
+      margin:0 auto;
+      padding:18px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:6px 0 14px;
+    }
+    .logo{
+      display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;
+    }
+    .logo .paw{
+      width:30px;height:30px;border-radius:8px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+    }
+    .btn-primary{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      background:var(--accent);
+      color:white;padding:8px 12px;border-radius:12px;font-weight:700;font-size:14px;border:none;cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    /* HERO */
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+      border-radius:var(--rounded);
+      padding:18px;
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+    .hero .media{
+      overflow:hidden;text-align: center;border-radius:10px;margin-bottom:12px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:22px;
+      line-height:1.1;
+      font-weight:800;
+      color:#3c2f26;
+    }
+    .highlight{color:var(--accent-2)}
+    .hero p{margin:12px 0 0;color:var(--muted);font-size:14px}
+
+    .cta-hero{display:block;margin-top:14px;width:100%}
+
+    /* PRICING CARDS */
+    .cards{display:grid;grid-template-columns:1fr;gap:12px;}
+    .card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(16,12,8,0.03);
+    }
+    .price{font-weight:800;font-size:22px;color:var(--accent);margin:8px 0}
+    .card .bullets{margin:8px 0 0;padding:0;list-style:none}
+    .card .bullets li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px dashed rgba(0,0,0,0.03);font-size:13px;color:#5a5149}
+    .card .bullets li:first-child{border-top:none;padding-top:0}
+    .pill{
+      background:var(--green-soft);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#2b7a5a;margin-top:4px;
+    }
+    .badge{
+      display:inline-block;text-align: center;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#fff4ea,#feeedd);font-weight:700;font-size:12px;margin-left:8px;color:#9a5a2f;
+    }
+
+    /* PROVA SOCIAL */
+    .section-title{text-align:center;margin:22px 0 10px}
+    .section-title h2{margin:0;font-size:20px;font-weight:800;color:#3c2f26}
+    .section-title p{margin:8px 0 0;color:var(--muted);font-size:13px}
+
+    .testimonials{display:grid;gap:10px}
+    .testimonial{
+      background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(16,12,8,0.03);box-shadow:var(--shadow);
+      font-size:14px;color:#55483f;text-align: center;
+    }
+    .stars{color:#c9753c;font-weight:800;margin-bottom:8px}
+    .review-author{display:block;margin-top:10px;font-size:13px;color:var(--muted);font-weight:700}
+
+    /* BENEFÍCIOS GRID */
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+    .benefit{
+      background:var(--card);padding:12px;border-radius:12px;text-align:center;font-size:13px;color:#5a5149;border:1px solid rgba(16,12,8,0.03)
+    }
+    .benefit .icon{
+      width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px;background:#eaf8f0;color:#2b7a5a;
+      font-weight:800;
+    }
+    .benefit h4{margin:0;font-weight:800;font-size:14px}
+    .benefit p{margin:8px 0 0;color:var(--muted);font-size:12px}
+
+    /* GUARANTEE */
+    .guarantee{
+      margin:18px 0;padding:18px;border-radius:12px;background:linear-gradient(180deg,#f8fff9,#f0f6f2);text-align:center;border:1px solid rgba(43,122,90,0.06)
+    }
+    .guarantee h3{margin:0;font-size:18px;font-weight:800;color:#2b2620}
+    .guarantee p{margin:10px 0 0;color:var(--muted);font-size:13px}
+
+    /* FOOTER */
+    footer{margin:18px 0 20px;text-align:center;color:var(--muted);font-size:13px}
+    footer .small{display:block;margin-top:8px;color:var(--muted);font-size:12px}
+
+    /* CTA FIXA INFERIOR */
+    .sticky-cta{
+      position:fixed;left:12px;right:12px;bottom:12px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;padding:12px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+      box-shadow:0 10px 30px rgba(42,18,10,0.18);z-index:1200;
+    }
+    .sticky-cta .label{font-weight:800;font-size:15px}
+    .sticky-cta button{background:transparent;border:2px solid rgba(255,255,255,0.16);color:#fff;padding:8px 12px;border-radius:10px;font-weight:800}
+
+    /* RESPONSIVIDADE (para telas muito pequenas) */
+    @media (max-width:360px){
+      .container{padding:12px}
+      .hero h1{font-size:20px}
+      .price{font-size:30px}
+      .benefits{grid-template-columns:1fr}
+    }
+    /* ACESSIBILIDADE: foco visível */
+    :focus{outline:3px solid rgba(201,116,62,0.12);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <!-- HEADER -->
+    <header>
+      <div class="logo" aria-label="CãoZen">
+        <div class="paw">🐾</div>
+        <div>
+          <div style="font-size:13px;color:var(--muted);font-weight:600">Adestra Pro
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="scrollToSection('pricing')">Compre Agora</button>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="media">
+          <!-- Troque o src pelo caminho da sua imagem real -->
+          <img src="assets/images/jovem-mulher-com-seu-cachorro-adoravel_23-2148345892.jpg" alt="Pessoa sorrindo com cachorro" />
+        </div>
+        <h1 id="hero-title">Seu cãozinho<span class="highlight"> obediente, calmo e feliz</span> de modo simples e prático em casa!</h1>
+        <p>Meu cachorro destruia as coisas e não me obedecia, não sabia o que fazer, por acaso descobri esse plano de treinamento e agora ele está calmo e obediente!</p>
+        <div class="cta-hero">
+          <button class="btn-primary" style="width:100%" onclick="scrollToSection('pricing')">Quero transformar meu cão agora!</button>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing">
+        <div class="cards">
+          <!-- Oferta 1: Ebook Básico -->
+          <article class="card" aria-labelledby="title-ebook">
+            <h3 id="title-ebook" style="margin:0 0 8px;font-size:16px;font-weight:800">Pacote Adestramento Básico</h3>
+            <p style="margin:0;color:var(--muted);font-size:13px">Aprenda o básico do adestramento com técnicas simples e eficazes.</p>
+            <div class="price">R$ 14,90</div>
+            <ul class="bullets">
+              <li><span class="pill">✓</span> Treinamento rápido e sem estresse</li>
+              <li><span class="pill">✓</span> Técnicas validadas por adestradores</li>
+              <li><span class="pill">✓</span> Resultados visíveis em poucos dias</li>
+              <li><span class="pill">✓</span> Ideal para filhotes e cães adultos</li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn-primary" style="width:100%" href="https://checkout.vltagency.xyz/VCCL1O8SCF16">Quero o treinamento básico por R$ 14,90</a>
+            </div>
+          </article>
+
+          <!-- Oferta 2: Pacote Completo -->
+          <article class="card" aria-labelledby="title-pacote">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 id="title-pacote" style="margin:0;font-size:16px;font-weight:800">Pacote Completo de Adestramento</h3>
+              <span class="badge">Mais Vendido ♥</span>
+            </div>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:13px">A solução completa para transformar seu cão.</p>
+            <div class="price">R$ 27,00</div>
+            <ul class="bullets">
+              <li><span class="pill">✓</span> Ebook principal</li>
+              <li><span class="pill">✓</span> Bônus 1 : 85 Dicas e Comandos Infalíveis</li>
+              <li><span class="pill">✓</span> Bônus 2 : Como ensinar seu cachorro onde fazer as necessidades</li>
+              <li><span class="pill">✓</span> Bônus 3 : 32 Receitas caseiras de petiscos saudáveis</li>
+              <li><span class="pill">✓</span> Bônus 4 : Dicas de alimentação para manter seu pet saudável</li>
+              <li><span class="pill">✓</span> Acesso vitalício à atualizações</li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn-primary" style="width:100%" href="https://checkout.vltagency.xyz/VCCL1O8SCF0X">Quero o Pacote Completo por R$27,00</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROVAS SOCIAIS -->
+      <section aria-labelledby="testimonials-title" style="margin-top:18px">
+        <div class="section-title">
+          <h2 id="testimonials-title">Veja o que outros donos estão dizendo</h2>
+          <p>Milhares de cães já foram transformados com nosso método</p>
+        </div>
+
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <div>"Em apenas 5 dias, minha Nina parou de fazer xixi no tapete! O método é incrível e muito fácil de seguir."</div>
+            <span class="review-author">Carol Freitas</span>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <div>"Nunca imaginei que treinar meu cachorro seria tão simples. O ebook é muito prático e direto ao ponto!"</div>
+            <span class="review-author">Paulo Campos</span>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <div>"Meu Rex agora obedece todos os comandos! Valeu cada centavo. Recomendo demais!"</div>
+            <span class="review-author">Maria Schuebech</span>
+          </div>
+
+    
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section style="margin-top:18px">
+        <div class="section-title">
+          <h2>Transforme sua vida com seu pet</h2>
+          <p>Descubra os benefícios de ter um cão bem treinado e feliz</p>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="icon">🏠</div>
+            <h4>Paz dentro de casa</h4>
+            <p>Sem mais bagunça, xixi fora do lugar ou comportamentos destrutivos.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">💚</div>
+            <h4>Vínculo mais forte</h4>
+            <p>Fortaleça a conexão através do respeito e comunicação clara.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">✨</div>
+            <h4>Progresso visível</h4>
+            <p>Veja mudanças reais em poucos dias com técnicas comprovadas.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">😊</div>
+            <h4>Alegria e harmonia</h4>
+            <p>Um cão feliz e obediente traz mais alegria para toda a família.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GARANTIA -->
+      <section style="margin-top:18px">
+        <div class="guarantee">
+          <h3>Garantia de 7 dias ou seu dinheiro de volta</h3>
+          <p>Se você não ver resultados em até 7 dias, devolvemos <strong>100% do seu dinheiro.</strong> <br><br>Risco zero pra você!</p>
+          <p style="margin-top:8px;color:var(--muted);font-size:13px"><br>Estamos tão confiantes na eficácia do nosso método que oferecemos esta garantia total. Sua satisfação é nossa prioridade.</p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="small">2025 AdestraPro ©. <br>Todos os direitos reservados.<br> Produto digital de adestramento canino.</div>
+      </footer>
+    </main>
+  </div>
+
+
+  <!-- SCRIPTS -->
+  <script>
+    // Scroll suave (fallback simples)
+    function scrollToSection(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - 12;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    }
+    // Pequena melhoria: prefere reduzir motion em dispositivos com preferência por reduzido
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>
